@@ -12,5 +12,15 @@ class Game
     puts "#{player_1.name} vs #{player_2.name} 🥊 Game on!"
     # puts player_1.lose_life
     # puts player_2.lives
+
+    # player 1 turn
+    # answer question
+    # get answer
+    # check answer
+    # Display score
+    # check if gamer over (with current player)
+    # new turn or game over
+    # Good bye!
+    
   end
 end
