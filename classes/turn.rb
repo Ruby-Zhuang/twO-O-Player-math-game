@@ -7,6 +7,7 @@ class Turn
   end
 
   def start_turn
+    puts "------------------ NEW TURN ------------------"
     ask_question
     get_answer
     validate_answer
@@ -18,10 +19,15 @@ class Turn
 
   def get_answer
     print "> "
-    @guess = $stdin.gets.chomp
+    @guess = $stdin.gets.chomp.to_i
   end
 
   def validate_answer
-    puts @guess
+    if @guess == @question.answer
+      puts "#{@player.name}: YES! You are correct."
+    else
+      puts "#{@player.name}: Seriously? No!"
+      @player.lose_life
+    end
   end
 end
