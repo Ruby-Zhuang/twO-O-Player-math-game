@@ -1,5 +1,5 @@
 class Game
-  attr_accessor :player_1, :player_2, :current_turn
+  attr_accessor :player_1, :player_2
 
   def initialize
     @player1 = Player.new("Player 1")
@@ -24,8 +24,8 @@ class Game
 
       # Display scores and check if game is over
       display_scores
-      game_over = game_over?
       switch_players
+      game_over = game_over?
     end
 
     end_game
