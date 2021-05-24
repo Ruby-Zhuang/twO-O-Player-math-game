@@ -13,7 +13,7 @@ class Player
     @lives -= 1 #is it self or @? both seem to do same thing
   end
 
-  def lost_game
+  def is_alive?
     @lives == 0 # returns true if number of lives is 0
   end
 end
