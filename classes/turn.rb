@@ -6,7 +6,7 @@ class Turn
     @question = Question.new()
   end
 
-  def start_turn
+  def run
     puts "------------------ NEW TURN ------------------"
     ask_question
     get_answer

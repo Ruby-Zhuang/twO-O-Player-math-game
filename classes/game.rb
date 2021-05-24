@@ -4,7 +4,7 @@ class Game
   def initialize
     @player1 = Player.new("Player 1")
     @player2 = Player.new("Player 2")
-    @current_player = 1;
+    @player1_turn = true;
   end
 
   def start
@@ -15,24 +15,20 @@ class Game
   end
 
   def game_loop
-    # while game isn't over
-    # player 1 turn
     game_over = false;
-
+    
     while !game_over
-      (@current_player == 1) ? turn = Turn.new(@player1) : turn = Turn.new(@player2)
-      turn.start_turn
+      # Start a new turn with the current player
+      @player1_turn ? turn = Turn.new(@player1) : turn = Turn.new(@player2)
+      turn.run
+
+      # Display scores and check if game is over
       display_scores
       game_over = game_over?
       switch_players
-      puts game_over
     end
 
-    puts "GAME OVER"
-    # check if gamer over (with current player)
-    # switch players
-    # new turn or game over
-    # Good bye!
+    end_game
   end
 
   def display_scores
@@ -44,6 +40,16 @@ class Game
   end
 
   def switch_players
-    @current_player = (@current_player + 1) % 2 #1 for player1 and 0 for player2
+    @player1_turn = !@player1_turn
+  end
+
+  def end_game
+    puts "------------------ GAME OVER -----------------"
+    if @player1.is_dead?
+      puts "Player 2 wins with a score of #{@player2.lives}/3"
+    else
+      puts "Player 1 wins with a score of #{@player1.lives}/3"
+    end
+    puts "Good bye!"
   end
 end
