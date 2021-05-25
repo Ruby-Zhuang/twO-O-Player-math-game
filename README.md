@@ -23,7 +23,7 @@ Player 1 vs Player 2 🥊 Game on!
 ------------------ NEW TURN ------------------
 Player 1: What does 5 plus 3 equal?
 > 9
-Player 1: Seriously? No!
+Player 1: Seriously? NO!
 P1: 2/3 vs P2: 3/3
 ------------------ NEW TURN ------------------
 Player 2: What does 2 plus 6 equal?

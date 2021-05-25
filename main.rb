@@ -4,4 +4,4 @@ require_relative "classes/question"
 require_relative "classes/player"
 
 new_game = Game.new
-new_game.start
+new_game.run
