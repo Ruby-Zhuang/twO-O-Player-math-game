@@ -23,9 +23,7 @@ class Game
 
   # Game loop that runs one turn per loop while switching players and checking if the game is over
   def game_loop
-    game_over = false;
-    
-    while !game_over
+    while !game_over?
       # Start a new turn with the current player
       turn = Turn.new(@player1_turn ? @player1 : @player2)
       turn.run
@@ -33,7 +31,6 @@ class Game
       # Display scores and check if game is over
       display_scores
       switch_players
-      game_over = game_over?
     end
   end
 
