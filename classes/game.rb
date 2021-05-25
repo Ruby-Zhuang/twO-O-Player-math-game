@@ -37,14 +37,17 @@ class Game
     end
   end
 
+  # game_loop helper to display scores of users at the end of each round
   def display_scores
     puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
   end
 
+  # game_loop helper to check if game is over
   def game_over? 
     @player1.is_dead? || @player2.is_dead?
   end
 
+  # game_loop helper to switch players
   def switch_players
     @player1_turn = !@player1_turn
   end
@@ -52,13 +55,7 @@ class Game
   # Display results one the game is over
   def end_game
     puts "------------------ GAME OVER -----------------"
-
-    if @player1.is_dead?
-      puts "Player 2 wins with a score of #{@player2.lives}/3"
-    else
-      puts "Player 1 wins with a score of #{@player1.lives}/3"
-    end
-
+    puts @player1.is_dead? ? "Player 2 wins with a score of #{@player2.lives}/3" : "Player 1 wins with a score of #{@player1.lives}/3"
     puts "Good bye!"
   end
 end
