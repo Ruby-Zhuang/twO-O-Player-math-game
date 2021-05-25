@@ -19,7 +19,7 @@ class Game
     
     while !game_over
       # Start a new turn with the current player
-      @player1_turn ? turn = Turn.new(@player1) : turn = Turn.new(@player2)
+      turn = Turn.new(@player1_turn ? @player1 : @player2)
       turn.run
 
       # Display scores and check if game is over
